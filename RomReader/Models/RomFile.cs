@@ -1,7 +1,7 @@
 ﻿
 namespace RomReader.Models;
 
-public enum _RomType
+public enum _ConsoleType
 {
     // Nintendo 64
     N64,
@@ -9,16 +9,15 @@ public enum _RomType
     GC
 }
 
-
 public abstract class RomFile
 {
-    protected RomFile(_RomType romType, string title)
+    protected RomFile(_ConsoleType consoleType, string title)
     {
-        RomType = romType;
+        ConsoleType = consoleType;
         Title = title;
     }
     
-    public _RomType RomType { get; set; }
+    public _ConsoleType ConsoleType { get; set; }
     public string Title { get; set; }
     
     

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 
 namespace RomReader.Models;
 
 public static class RomInfo
 {
-    public static readonly ReadOnlyDictionary<byte[], _RomType> magicNums;
+    public static readonly ReadOnlyDictionary<byte[], ConsoleRomPair> magicNums;
    
     // N64
     private static readonly byte[] z64 = new byte[] { 0x80, 0x37, 0x12, 0x40 };  
@@ -17,14 +18,14 @@ public static class RomInfo
     static RomInfo()
     {
 
-        IDictionary<byte[], _RomType> dict = new Dictionary<byte[], _RomType>(new ByteArrayComparer())
+        IDictionary<byte[], ConsoleRomPair> dict = new Dictionary<byte[], ConsoleRomPair>(new ByteArrayComparer())
         {
-            {z64, _RomType.N64},
-            {wbfs, _RomType.Wii}
+            {z64, new ConsoleRomPair(_ConsoleType.N64, _FileType.Z64)},
+            {wbfs, new ConsoleRomPair(_ConsoleType.Wii, _FileType.WBFS)}
         };
-        magicNums = new ReadOnlyDictionary<byte[], _RomType>(dict);
+        magicNums = new ReadOnlyDictionary<byte[], ConsoleRomPair>(dict);
     }
-    
+
 }
 
 public class ByteArrayComparer : IEqualityComparer<byte[]>
