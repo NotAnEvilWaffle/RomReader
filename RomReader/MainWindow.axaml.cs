@@ -9,9 +9,9 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        Console.WriteLine("TESTING WORKING!");
-        var manager = new RomManager("E:\\Test Roms\\");
-        manager.HandleRoms();
-        manager.PrintRomTitles();
+        // Console.WriteLine("TESTING WORKING!");
+        // var manager = new RomManager("E:\\Test Roms\\");
+        // manager.HandleRoms();
+        // manager.PrintRomTitles();
     }
 }

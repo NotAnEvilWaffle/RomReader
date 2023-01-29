@@ -19,6 +19,8 @@ public class RomManager
         Roms = new List<RomFile>();
     }
 
+    public List<RomFile> GetRoms() => Roms;
+
     public void HandleRoms()
     {
         foreach (var file in Files)
@@ -30,8 +32,7 @@ public class RomManager
                 // Probably not good
                 reader.Read(magicNumber, 0, 4);
 
-                ConsoleRomPair type;
-                if (RomInfo.magicNums.TryGetValue(magicNumber, out type))
+                if (RomInfo.magicNums.TryGetValue(magicNumber, out ConsoleRomPair? type))
                 {
                     switch (type.FileType)
                     {
