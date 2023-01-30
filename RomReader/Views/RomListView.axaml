@@ -4,16 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="RomReader.Views.RomListView">
-    
-    <ListBox Items="{Binding Roms}">
-        <ListBox.ItemTemplate>
-            <DataTemplate>
-                <Border Background="Gray" Padding="4">
-                    <TextBlock Text="{Binding Title}" />
-                </Border>
-            </DataTemplate>
-        </ListBox.ItemTemplate>
-    </ListBox>
+    <Grid ColumnDefinitions="2*,Auto,6*" RowDefinitions="100*">
+        <ListBox Items="{Binding Roms}" VerticalAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="Gray" Padding="4">
+                        <Grid ColumnDefinitions="5*,5*" RowDefinitions="5*,5*">
+                            <TextBlock Text="{Binding Title}" Grid.ColumnSpan="2"></TextBlock>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding ConsoleType}"></TextBlock>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Background="{x:Null}"/>
+    </Grid>
     
     
 </UserControl>
