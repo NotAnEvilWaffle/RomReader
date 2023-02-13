@@ -1,21 +1,14 @@
-﻿using System.Reactive.Disposables;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using Avalonia.ReactiveUI;
-using ReactiveUI;
-using RomReader.ViewModels;
 
 namespace RomReader.Views;
 
-public partial class RomListView : UserControl
+public partial class RomView : UserControl
 {
-    public RomListView()
+    public RomView()
     {
-
         InitializeComponent();
-
-        
     }
 
     private void InitializeComponent()

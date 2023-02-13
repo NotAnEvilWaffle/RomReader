@@ -1,5 +1,7 @@
 ﻿
 using System.Globalization;
+using System.Reactive.Disposables;
+using ReactiveUI;
 
 namespace RomReader.Models;
 
@@ -13,12 +15,13 @@ public enum _ConsoleType
 
 public abstract class RomFile
 {
-    
+
     public _ConsoleType ConsoleType { get; set; }
     public string Title { get; set; }
     
     protected RomFile(_ConsoleType consoleType, string title)
     {
+
         ConsoleType = consoleType;
         Title = title;
     }
