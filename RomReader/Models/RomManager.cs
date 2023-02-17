@@ -36,11 +36,12 @@ public class RomManager
                 {
                     switch (type.FileType)
                     {
+                        // The title offsets should be made into a lookup table
                         case _FileType.Z64:
-                            Roms.Add(new N64Rom(RomUtils.GetTitle(reader, 0x20)));
+                            Roms.Add(new N64Rom(RomUtils.GetTitle(reader, 0x20), type));
                             break;
                         case _FileType.WBFS:
-                            Roms.Add(new WiiRom(RomUtils.GetTitle(reader, 0x220)));
+                            Roms.Add(new WiiRom(RomUtils.GetTitle(reader, 0x220), type));
                             break;
                         default:
                             break;

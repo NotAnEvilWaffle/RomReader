@@ -2,7 +2,7 @@
 
 public class GamecubeRom : RomFile
 {
-    public GamecubeRom(string title) : base(_ConsoleType.GC, title)
+    public GamecubeRom(string title, ConsoleRomPair pair) : base(pair, title)
     {
         
     }

@@ -16,14 +16,26 @@ public enum _ConsoleType
 public abstract class RomFile
 {
 
-    public _ConsoleType ConsoleType { get; set; }
+    public ConsoleRomPair _ConsoleRomPair;
+
     public string Title { get; set; }
+    public _ConsoleType ConsoleType { get; set; }
+    public ConsoleRomPair ConsoleRomPair { get; set; }
     
-    protected RomFile(_ConsoleType consoleType, string title)
+    
+    
+    protected RomFile(ConsoleRomPair pair, string title)
     {
 
-        ConsoleType = consoleType;
+        ConsoleRomPair = pair;
+        ConsoleType = pair.ConsoleType;
         Title = title;
+    }
+
+
+    public string ConsoleTypeString
+    {
+        get { return this.GetConsoleTypeString(); }
     }
 
     public string GetConsoleTypeString()

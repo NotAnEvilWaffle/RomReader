@@ -2,7 +2,7 @@
 
 public class WiiRom : RomFile
 {
-    public WiiRom(string title) : base(_ConsoleType.Wii, title)
+    public WiiRom(string title, ConsoleRomPair pair) : base(pair, title)
     {
         
     }
