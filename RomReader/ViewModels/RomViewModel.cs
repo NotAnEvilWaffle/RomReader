@@ -39,12 +39,6 @@ public class RomViewModel : ViewModelBase
 
     }
 
-    // public Bitmap? Cover
-    // {
-    //     get => _cover;
-    //     set => this.RaiseAndSetIfChanged(ref _cover, value);
-    // }
-
     public async Task<Bitmap> SetCoverFromUrl()
     {
         var artUrl = await IgdbUtils.GetBoxArtByTitle(RomFile.GetTitleCaseTitle().Trim());
